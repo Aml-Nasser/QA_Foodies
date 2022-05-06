@@ -15,12 +15,13 @@
 - WBS
 
 2.1.2-Low-Level
-- Design
-- Wireframe
+- Design Wireframe
+
 ### 2.2-Requirements 
-- SIQ
-- SRS
-- Usecase
+- F_Customer_Requirment
+- F_SIQ
+- F_SRS
+- F_Usecase
 ### 3-Development
 3.1-Front End 
 - UI
