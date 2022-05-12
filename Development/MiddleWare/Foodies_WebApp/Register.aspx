@@ -128,7 +128,7 @@
                             
                        
                             <div class="form-group pt-1">
-                                <asp:Button id="RegisterBtn" class="btn btn-primary btn-block" runat="server" Text="Register" BorderStyle="Solid" ToolTip="Submit"/>  
+                                <asp:Button id="RegisterBtn" class="btn btn-primary btn-block" runat="server" Text="Register" BorderStyle="Solid" ToolTip="Submit" OnClick="RegisterBtn_Click"/>  
                        
                             </div>
                         

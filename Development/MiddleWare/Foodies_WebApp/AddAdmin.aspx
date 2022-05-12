@@ -132,7 +132,7 @@
                             
                        
                             <div class="form-group pt-1">
-                                <asp:Button id="AddAdminBtn" class="btn btn-primary btn-block" runat="server" Text="Add Admin" BorderStyle="Solid" ToolTip="Submit"/>  
+                                <asp:Button id="AddAdminBtn" class="btn btn-primary btn-block" runat="server" Text="Add Admin" BorderStyle="Solid" ToolTip="Submit" OnClick="AddAdminBtn_Click"/>  
                        
                             </div>
                         </form>
