@@ -1,0 +1,2 @@
+C:\Users\Lenovo\OneDrive\Desktop\iTi\QA_Foodies\Development\MiddleWare\Foodies\obj\Debug\Foodies.csproj.AssemblyReference.cache
+C:\Users\Lenovo\OneDrive\Desktop\iTi\QA_Foodies\Development\MiddleWare\Foodies\obj\Debug\Foodies.csproj.CoreCompileInputs.cache
