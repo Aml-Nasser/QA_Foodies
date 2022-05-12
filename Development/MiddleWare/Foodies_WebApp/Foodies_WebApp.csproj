@@ -158,6 +158,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CSS\AddMenuItem.css" />
     <Content Include="CSS\AddOffer.css" />
     <Content Include="CSS\AdminHome.css" />
     <Content Include="CSS\form.css" />
@@ -180,6 +181,7 @@
     <Content Include="Login.aspx" />
     <Content Include="OffersandPormotions.aspx" />
     <Content Include="UserHomePage.aspx" />
+    <Content Include="AddMenuItem.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\FoodiesLogo.png" />
     <Content Include="Register.aspx" />
@@ -321,6 +323,13 @@
     </Compile>
     <Compile Include="UserHomePage.aspx.designer.cs">
       <DependentUpon>UserHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddMenuItem.aspx.cs">
+      <DependentUpon>AddMenuItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMenuItem.aspx.designer.cs">
+      <DependentUpon>AddMenuItem.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
