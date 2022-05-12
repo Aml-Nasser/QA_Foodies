@@ -51,6 +51,24 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.TextBox FullName1;
 
         /// <summary>
+        /// nameReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator nameReq;
+
+        /// <summary>
+        /// nameval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator nameval;
+
+        /// <summary>
         /// userName control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,24 @@ namespace Foodies_WebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username1;
+
+        /// <summary>
+        /// usernameReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameReq;
+
+        /// <summary>
+        /// usernameVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator usernameVal;
 
         /// <summary>
         /// email control.
@@ -87,6 +123,24 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.TextBox emailText;
 
         /// <summary>
+        /// emailReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailReq;
+
+        /// <summary>
+        /// emailval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator emailval;
+
+        /// <summary>
         /// pass1Lab control.
         /// </summary>
         /// <remarks>
@@ -103,6 +157,24 @@ namespace Foodies_WebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox pass1;
+
+        /// <summary>
+        /// pssReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator pssReq;
+
+        /// <summary>
+        /// passExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator passExp;
 
         /// <summary>
         /// pass2 control.
@@ -123,6 +195,24 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.TextBox pass22;
 
         /// <summary>
+        /// pas2req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator pas2req;
+
+        /// <summary>
+        /// comparePasswords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
+
+        /// <summary>
         /// address1 control.
         /// </summary>
         /// <remarks>
@@ -141,6 +231,24 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.TextBox address;
 
         /// <summary>
+        /// addressReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator addressReq;
+
+        /// <summary>
+        /// addressVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator addressVal;
+
+        /// <summary>
         /// phone1 control.
         /// </summary>
         /// <remarks>
@@ -157,6 +265,24 @@ namespace Foodies_WebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox phone;
+
+        /// <summary>
+        /// phoneReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator phoneReq;
+
+        /// <summary>
+        /// phoneVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator phoneVal;
 
         /// <summary>
         /// AddAdminBtn control.

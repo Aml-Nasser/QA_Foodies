@@ -60,6 +60,15 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.RequiredFieldValidator nameReq;
 
         /// <summary>
+        /// nameval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator nameval;
+
+        /// <summary>
         /// userName control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Foodies_WebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameReq;
+
+        /// <summary>
+        /// usernameVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator usernameVal;
 
         /// <summary>
         /// email control.
@@ -186,13 +204,13 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.RequiredFieldValidator pas2req;
 
         /// <summary>
-        /// CompareValidator1 control.
+        /// comparePasswords control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
 
         /// <summary>
         /// address1 control.
@@ -222,6 +240,15 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.RequiredFieldValidator addressReq;
 
         /// <summary>
+        /// addressVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator addressVal;
+
+        /// <summary>
         /// phone1 control.
         /// </summary>
         /// <remarks>
@@ -247,6 +274,15 @@ namespace Foodies_WebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator phoneReq;
+
+        /// <summary>
+        /// phoneVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator phoneVal;
 
         /// <summary>
         /// RegisterBtn control.
