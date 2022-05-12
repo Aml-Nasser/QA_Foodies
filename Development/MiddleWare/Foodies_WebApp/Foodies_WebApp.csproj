@@ -118,6 +118,7 @@
     <Content Include="CSS\AdminHome.css" />
     <Content Include="CSS\form.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\Offerstyle.css" />
     <Content Include="CSS\UserHomePage.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -133,6 +134,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Images\KFC.png" />
     <Content Include="Login.aspx" />
+    <Content Include="OffersandPormotions.aspx" />
     <Content Include="UserHomePage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\FoodiesLogo.png" />
@@ -225,6 +227,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OffersandPormotions.aspx.cs">
+      <DependentUpon>OffersandPormotions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OffersandPormotions.aspx.designer.cs">
+      <DependentUpon>OffersandPormotions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
