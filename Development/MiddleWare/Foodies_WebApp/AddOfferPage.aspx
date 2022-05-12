@@ -35,7 +35,7 @@
                                      required></asp:TextBox>
                             </div>
                             <div class="form-group pt-1">
-                                <asp:Button class="btn btn-primary btn-block" type="submit" runat="server" Text="Add"></asp:Button>
+                                <asp:Button class="btn btn-primary btn-block" type="submit" runat="server" Text="Add" OnClick="AddOfferBtn_OnClick"></asp:Button>
                             </div>
                         </form>
                         
