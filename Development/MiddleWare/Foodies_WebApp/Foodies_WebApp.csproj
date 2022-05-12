@@ -163,6 +163,7 @@
     <Content Include="CSS\AdminHome.css" />
     <Content Include="CSS\form.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\MenuItem.css" />
     <Content Include="CSS\Offerstyle.css" />
     <Content Include="CSS\UserHomePage.css" />
     <Content Include="Default.aspx" />
