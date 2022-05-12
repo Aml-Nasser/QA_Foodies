@@ -39,7 +39,7 @@
                             <asp:TextBox runat="server" type="password" class="form-control" ID="password" name="password" required></asp:TextBox>
                         </div>
                         <div class="form-group pt-1">
-                            <asp:Button class="btn btn-primary btn-block" type="submit" runat="server" Text="Login" ></asp:Button>
+                            <asp:Button class="btn btn-primary btn-block" type="submit" runat="server" Text="Login" OnClick="LoginBtn_OnClick" ></asp:Button>
                         </div>
                     </form>
                     <p class="small-xl pt-3 text-center">
