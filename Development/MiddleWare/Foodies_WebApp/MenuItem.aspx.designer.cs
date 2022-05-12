@@ -11,7 +11,7 @@ namespace Foodies_WebApp
 {
 
 
-    public partial class MenuItemKFC
+    public partial class MenuItem
     {
 
         /// <summary>

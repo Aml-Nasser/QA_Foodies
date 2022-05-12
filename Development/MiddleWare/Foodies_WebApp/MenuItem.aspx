@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuItemKFC.aspx.cs" Inherits="Foodies_WebApp.MenuItemKFC" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuItem.aspx.cs" Inherits="Foodies_WebApp.MenuItem" %>
 
 <!DOCTYPE html>
 

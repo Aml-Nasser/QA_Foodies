@@ -177,11 +177,16 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\CinabonHome.jpg" />
+    <Content Include="Images\Cinnabon.jpg" />
     <Content Include="Images\KFC.png" />
+    <Content Include="Images\KFChome.png" />
+    <Content Include="Images\Mac.png" />
+    <Content Include="Images\MacHome.png" />
     <Content Include="Login.aspx" />
+    <Content Include="MenuItem.aspx" />
     <Content Include="OffersandPormotions.aspx" />
     <Content Include="UserHomePage.aspx" />
-    <Content Include="AddMenuItem.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\FoodiesLogo.png" />
     <Content Include="Register.aspx" />
@@ -281,6 +286,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.aspx.cs">
+      <DependentUpon>MenuItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuItem.aspx.designer.cs">
+      <DependentUpon>MenuItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OffersandPormotions.aspx.cs">
       <DependentUpon>OffersandPormotions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,13 +335,6 @@
     </Compile>
     <Compile Include="UserHomePage.aspx.designer.cs">
       <DependentUpon>UserHomePage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddMenuItem.aspx.cs">
-      <DependentUpon>AddMenuItem.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddMenuItem.aspx.designer.cs">
-      <DependentUpon>AddMenuItem.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
