@@ -29,18 +29,17 @@
                             <hr>
                         </div>
                         
-                           
                             <input id="TextBox1" runat="server"
                                 type="hidden" name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4" ></input>
                             <div class="form-group required">
                                 <asp:Label id="fullName" runat="server" Text="Label" for="FullName">Full Name </asp:Label>
-                                <asp:TextBox id="FullName1" runat="server" pattern="[a-zA-Z'-'\s]*" type="text" class="form-control text-lowercase"
+                                <asp:TextBox id="FullName1" runat="server" type="text" class="form-control text-lowercase"
                                     name="FullName" value=""></asp:TextBox>
                                 <asp:RequiredFieldValidator id="nameReq" runat="server" ControlToValidate="FullName1" ErrorMessage="This field is required"   
                              ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <asp:RegularExpressionValidator id="nameval" runat="server" ControlToValidate="FullName1"   
-                                ErrorMessage="Please enter characters only" ForeColor="Red" ValidationExpression="[a-zA-Z]+">  
+                                ErrorMessage="Please enter characters only" ForeColor="Red" ValidationExpression="^[a-zA-Z ]*$" >  
                                 </asp:RegularExpressionValidator>
                             </div>
 
@@ -52,7 +51,7 @@
                                     name="username" value=""></asp:TextBox>
                                 <asp:RequiredFieldValidator id="usernameReq" runat="server" ControlToValidate="username1" ErrorMessage="This field is required"     
                             ForeColor="Red"></asp:RequiredFieldValidator>
-                                <br />
+                                <br /> 
                                 <asp:RegularExpressionValidator id="usernameVal" runat="server" ControlToValidate="username1"   
                                 ErrorMessage="Please enter characters and numbers only" ForeColor="Red" ValidationExpression="^(?=.{4})[a-z][a-z\d]*_?[a-z\d]+$">  
                                 </asp:RegularExpressionValidator>
@@ -67,7 +66,7 @@
                                 <asp:RequiredFieldValidator id="emailReq" runat="server" ControlToValidate="emailText" ErrorMessage="This field is required"     
                                 ForeColor="Red"></asp:RequiredFieldValidator><br />
                                 <asp:RegularExpressionValidator id="emailval" runat="server" ControlToValidate="emailText"   
-                                ErrorMessage="Please enter valid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">  
+                                ErrorMessage="Please enter a valid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">  
                                 </asp:RegularExpressionValidator>  
                             </div>
 
@@ -110,7 +109,7 @@
                             ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <asp:RegularExpressionValidator id="addressVal" runat="server" ControlToValidate="address"   
-                                ErrorMessage="No sepcial characters allowed" ForeColor="Red" ValidationExpression="[a-zA-Z0-9\s]*$">  
+                                ErrorMessage="No special characters allowed" ForeColor="Red" ValidationExpression="[a-zA-Z0-9\s]*$">  
                                 </asp:RegularExpressionValidator>  
 
                             </div>
@@ -129,10 +128,11 @@
                                 </asp:RegularExpressionValidator>  
                             </div>
 
+
                             
                        
                             <div class="form-group pt-1">
-                                <asp:Button id="AddUserBtn" class="btn btn-primary btn-block" runat="server" Text="Add User" BorderStyle="Solid" ToolTip="Submit"/>  
+                                <asp:Button id="AddUserBtn" class="btn btn-primary btn-block" runat="server" Text="Add User" BorderStyle="Solid" ToolTip="Submit" OnClick="AddUserBtn_Click"/>  
                        
                             </div>
                         </form>
