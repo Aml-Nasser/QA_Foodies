@@ -22,7 +22,7 @@
                             <center><h4>Login</h4></center>
                             <hr>
                         </div>
-                        <form id="submitForm" runat="server" action="#register" method="post" data-parsley-validate=" "
+                        <form ID="submitForm" runat="server" action="#register" method="post" data-parsley-validate=" "
                             data-parsley-errors-messages-disabled="true" novalidate="" _lpchecked="1">
                             <input ID="TextBox1" runat="server"
                                 type="hidden" name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4"></input>
@@ -45,7 +45,7 @@
                         </form>
                         <p class="small-xl pt-3 text-center">
                             <span class="text-muted">Not a member?</span>
-                            <asp:a href="/signup">Sign up</asp:a>
+                            <asp:HyperLink href="/signup" runat="server">Sign up</asp:HyperLink>
                         </p>
                     </div>
                 </div>
