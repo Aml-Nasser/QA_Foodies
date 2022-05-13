@@ -1,0 +1,63 @@
+﻿body {
+    font-family: 'Muli', sans-serif;
+}
+
+.card {
+    background-color: #cad2c5;
+}
+
+h1 {
+    color: #fff;
+    padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+.flex-container {
+    display: flex;
+    height: 120px;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+}
+
+    .flex-container > div {
+        margin: 20px;
+    }
+
+.flex-child {
+    flex: 1;
+    padding: 10px;
+    height: 150px;
+    width: 150px;
+    margin-right: 20px;
+}
+
+a {
+    color: #333;
+}
+
+    a:hover {
+        color: #52796f;
+        text-decoration: none;
+    }
+
+.form:focus {
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #52796f;
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn {
+    background: #fff;
+    border: 0.1px solid gray;
+    outline: 0;
+    box-shadow: none;
+    color: #000;
+}
+
+    .btn:hover {
+        background: #52796f;
+        border: #52796f;
+    }
