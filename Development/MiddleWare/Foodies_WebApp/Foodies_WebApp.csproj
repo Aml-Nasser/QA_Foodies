@@ -153,6 +153,7 @@
     <Content Include="AddMenuItemRestaurantList.aspx" />
     <Content Include="AddOfferPage.aspx" />
     <Content Include="AddOfferRestaurantList.aspx" />
+    <Content Include="AddRestaurantItem.aspx" />
     <Content Include="AddUser.aspx" />
     <Content Include="AdminHome.aspx" />
     <Content Include="ConfirmOrderPage.aspx" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="AddOfferRestaurantList.aspx.designer.cs">
       <DependentUpon>AddOfferRestaurantList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddRestaurantItem.aspx.cs">
+      <DependentUpon>AddRestaurantItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddRestaurantItem.aspx.designer.cs">
+      <DependentUpon>AddRestaurantItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
