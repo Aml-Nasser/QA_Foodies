@@ -24,8 +24,7 @@ namespace Foodies_WebApp
             mdr = command.ExecuteReader();
             if (mdr.Read())
             {
-
-                user_Name = username.Text;
+                Session["user_Name"] = username.Text;
                 MessageBox.Show("Login Successful!");
                 Response.Redirect("UserHomePage.aspx");
 
