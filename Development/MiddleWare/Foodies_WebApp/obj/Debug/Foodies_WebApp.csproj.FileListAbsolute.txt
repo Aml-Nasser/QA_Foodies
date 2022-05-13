@@ -700,3 +700,25 @@ E:\Hager\ITI\Quality\New folder\QA_Foodies\Development\MiddleWare\Foodies_WebApp
 E:\Hager\ITI\Quality\New folder\QA_Foodies\Development\MiddleWare\Foodies_WebApp\obj\Debug\Foodies_WebApp.csproj.CopyComplete
 E:\Hager\ITI\Quality\New folder\QA_Foodies\Development\MiddleWare\Foodies_WebApp\obj\Debug\Foodies_WebApp.dll
 E:\Hager\ITI\Quality\New folder\QA_Foodies\Development\MiddleWare\Foodies_WebApp\obj\Debug\Foodies_WebApp.pdb
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\BouncyCastle.Crypto.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\Google.Protobuf.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\K4os.Compression.LZ4.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\K4os.Compression.LZ4.Streams.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\K4os.Hash.xxHash.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\MySql.Data.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Buffers.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Memory.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Numerics.Vectors.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\Ubiety.Dns.Core.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\ZstdNet.dll
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\Google.Protobuf.pdb
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\Google.Protobuf.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\K4os.Compression.LZ4.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\K4os.Compression.LZ4.Streams.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\K4os.Hash.xxHash.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\MySql.Data.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Buffers.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Memory.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Numerics.Vectors.xml
+D:\QA_Foodies\Development\MiddleWare\Foodies_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml

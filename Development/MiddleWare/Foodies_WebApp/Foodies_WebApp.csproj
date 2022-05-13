@@ -149,6 +149,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddAdmin.aspx" />
+    <Content Include="AddMenuItem.aspx" />
     <Content Include="AddMenuItemRestaurantList.aspx" />
     <Content Include="AddOfferPage.aspx" />
     <Content Include="AddOfferRestaurantList.aspx" />
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddMenuItem.aspx.cs">
+      <DependentUpon>AddMenuItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMenuItem.aspx.designer.cs">
+      <DependentUpon>AddMenuItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddMenuItemRestaurantList.aspx.cs">
       <DependentUpon>AddMenuItemRestaurantList.aspx</DependentUpon>
