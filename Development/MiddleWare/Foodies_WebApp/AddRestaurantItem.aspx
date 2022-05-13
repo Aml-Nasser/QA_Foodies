@@ -8,6 +8,7 @@
 <link rel='stylesheet' href="CSS/AddMenuItem.css">
 </head>
 <body>
+	<form runat="server">
 <div class="pt-5">
         <div class="container">
             <div class="row">
@@ -17,25 +18,34 @@
                             <center><h4>Add Restaurant</h4></center>
                             <hr>
                         </div>
-							<form>
-								<div>
+							
+								<div style="display: -webkit-inline-box;">
 									<h5>Restaurant Name:</h5>
+									 <asp:TextBox runat="server" type="text" ID="ResName" name="ItemName" required style="margin-left: 4%;"></asp:TextBox>
+									 									
 								</div>
-								<div class="input">
-									<input type="text" name="ResName" required>
-																		
-								</div>
+						   
+
+                                    <asp:RegularExpressionValidator 
+                                       runat="SERVER" 
+                                       ControlToValidate="ResName" 
+                                       ErrorMessage="Enter a valid Restaurant Name."
+                                       ValidationExpression="[A-Za-z]{1,32}">
+                                     </asp:RegularExpressionValidator>
 
 
 
 									<!--adding Restaurant Logo-->
+
 									<div class="imgpart">
+										<br />
 									<h5>Restaurant logo</h5>
-								
+										<br />
 									<div class="flex-container">
-									<div class="flex_child"> <img src="FoodiesLogo.png" height="80" width="80"> </div>
+									<div class="flex_child"> <img src="Images/FoodiesLogo.png" height="80" width="80" style="margin-bottom: -34%;margin-left: 152%;"> </div>
 									<div class="flex_child"><div class="form-group pt-1">
-                                <button class="btn btn-primary btn-block" type="submit">Upload</button>
+									<asp:FileUpload ID="FileUpload1" runat="server" style="margin-left: 18%;"/>
+                              <!---  <button class="btn btn-primary btn-block" type="submit">Upload</button>-->
                         </div>
 						</div>
 						</div>
@@ -43,12 +53,13 @@
 						<div class="form-group pt-1">
                                 <button class="btn btn-primary btn-block" type="submit">Add</button>
                         </div>
-							</form>
+							
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+		</form>
 
 </body>
 </html>
