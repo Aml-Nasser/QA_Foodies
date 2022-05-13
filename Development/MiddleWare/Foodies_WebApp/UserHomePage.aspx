@@ -42,39 +42,26 @@
 
 <div class="test">
 <div class="card">
-  <asp:Image src="Images\KFC.png" alt="Avatar" style="width:100%" runat="server"/>
-  <div class="info">
-  <p>
-  Lorem Ipsum ie like Aldus Pa
-  geMaker including versions of Lorem Ipsum.
-  </p>
+    <asp:HyperLink ID="HyperLink1" NavigateUrl="#" runat="server">
+  <asp:Image src="Images\KFChome.png" alt="Avatar" style="width:100%" runat="server"/></asp:HyperLink>
+  <div class="container">
     <h4>john dean</h4>
   </div>
 </div>
 
 <div class="card" >
-  <asp:Image runat="server" src="https://www.washingtonpost.com/resizer/9YWv-qOa9uW7CQZ9UGiW23eTZzU=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/BTCNJJN2Y43KPHPXPQWPASXRKM.jpg" alt="Avatar" style="width:100%"/>
+    <asp:HyperLink ID="HyperLink2" NavigateUrl="#" runat="server">
+  <asp:Image runat="server" src="Images\CinabonHome.jpg" alt="Avatar" style="width:100%"/></asp:HyperLink>
   <div class="container">
-   <p>
-  Lorem Ipsum ie like Aldus Pa
-  geMaker including versions of Lorem Ipsum.
-  Lorem Ipsum ie like Aldus Pa
-  geMaker including versions of Lorem Ipsum.
-  </p>
     <h4>john dean</h4>
   </div>
 </div>
 
 
 <div class="card" >
-  <asp:Image runat="server" src="https://www.washingtonpost.com/resizer/9YWv-qOa9uW7CQZ9UGiW23eTZzU=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/BTCNJJN2Y43KPHPXPQWPASXRKM.jpg" alt="Avatar" style="width:100%"/>
+    <asp:HyperLink ID="HyperLink3" NavigateUrl="#" runat="server">
+  <asp:Image runat="server" src="Images\MacHome.png" alt="Avatar" style="width:100%"/></asp:HyperLink>
   <div class="container">
-   <p>
-  Lorem Ipsum ie like Aldus Pa
-  geMaker including versions of Lorem Ipsum.
-  Lorem Ipsum ie like Aldus Pa
-  geMaker including versions of Lorem Ipsum.
-  </p>
     <h4>john dean</h4>
   </div>
 </div>

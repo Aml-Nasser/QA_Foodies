@@ -1,0 +1,110 @@
+﻿
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+.navbar {
+    width: 80%;
+}
+
+#logo {
+    width: 70px;
+    position: relative;
+    left: 25px;
+}
+
+header {
+    background-color: #cad2c5;
+}
+
+
+nav {
+    float: right;
+}
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline-flex;
+        margin-left: 70px;
+        padding-top: 23px;
+        position: relative;
+    }
+
+    nav a {
+        color: #444;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+        nav a:hover {
+            color: #000;
+        }
+
+
+
+            nav a:hover::before {
+                width: 100%;
+            }
+
+.card {
+    background-color: #cad2c5;
+}
+
+h1 {
+    color: #fff;
+    padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+a {
+    color: #333;
+}
+
+    a:hover {
+        color: #52796f;
+        text-decoration: none;
+    }
+
+.form-control:focus {
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #52796f;
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn {
+    background: #fff;
+    border: 0.1px solid gray;
+    outline: 0;
+    box-shadow: none;
+    color: #000;
+}
+
+    .btn:hover {
+        background: #52796f;
+        border: #52796f;
+    }
+
+
+#yud {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#yu {
+    border: 1px solid black;
+    position: relative;
+    left: 76%;
+    width: 15%;
+}
+
+#yp {
+    padding: 15px;
+}

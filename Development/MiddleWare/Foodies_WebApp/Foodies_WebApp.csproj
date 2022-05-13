@@ -149,9 +149,12 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddAdmin.aspx" />
+    <Content Include="AddMenuItemRestaurantList.aspx" />
     <Content Include="AddOfferPage.aspx" />
+    <Content Include="AddOfferRestaurantList.aspx" />
     <Content Include="AddUser.aspx" />
     <Content Include="AdminHome.aspx" />
+    <Content Include="ConfirmOrderPage.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -159,8 +162,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CSS\AddMenuItem.css" />
+    <Content Include="CSS\AddMenuItemRestaurantList.css" />
     <Content Include="CSS\AddOffer.css" />
+    <Content Include="CSS\AddOfferRestaurantList.css" />
     <Content Include="CSS\AdminHome.css" />
+    <Content Include="CSS\ConfirmOrder.css" />
     <Content Include="CSS\form.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\MenuItem.css" />
@@ -233,12 +239,26 @@
     <Compile Include="AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddMenuItemRestaurantList.aspx.cs">
+      <DependentUpon>AddMenuItemRestaurantList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMenuItemRestaurantList.aspx.designer.cs">
+      <DependentUpon>AddMenuItemRestaurantList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddOfferPage.aspx.cs">
       <DependentUpon>AddOfferPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddOfferPage.aspx.designer.cs">
       <DependentUpon>AddOfferPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddOfferRestaurantList.aspx.cs">
+      <DependentUpon>AddOfferRestaurantList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddOfferRestaurantList.aspx.designer.cs">
+      <DependentUpon>AddOfferRestaurantList.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
@@ -263,6 +283,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ConfirmOrderPage.aspx.cs">
+      <DependentUpon>ConfirmOrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmOrderPage.aspx.designer.cs">
+      <DependentUpon>ConfirmOrderPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

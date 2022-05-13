@@ -67,15 +67,7 @@ nav {
     background-color: #cad2c5;
     left: 1324px;
 }
-/*#searchButton{
- background: bisque;
-    font-size: 17px;
-    border: none;
-    border-radius: 0px 5px 5px 0px;
-    cursor: pointer;
-    top: 51px;
-    position: relative;
-    left: 1216px;}*/
+
 
 .test {
     display: flex;
@@ -88,6 +80,7 @@ nav {
     border: 1px solid #dadada;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.2s;
+    width: 32%;
 }
 
     .card h3 {
