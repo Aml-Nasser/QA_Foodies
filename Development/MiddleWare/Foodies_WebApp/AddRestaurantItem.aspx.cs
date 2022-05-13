@@ -37,21 +37,25 @@ namespace Foodies_WebApp
             if (FileUpload1.HasFile)
             {
                 string Extent = System.IO.Path.GetExtension(FileUpload1.FileName);
-                if (Extent.ToLower() != ".png" || Extent.ToLower() == ".jpg" || Extent.ToLower() == ".JPEG")
-                {
-                    FileUpload1 = null;
-                    MessageBox.Show("menu item image must be  JPG, JPEG  or PNG extension");
-                    ResName.Text = " ";
-                   
-                }
-                else
+                if (Extent.ToLower() == ".png" || Extent.ToLower() == ".jpg" || Extent.ToLower() == ".JPEG")
                 {
                     Stream sm = FileUpload1.PostedFile.InputStream;
                     BinaryReader binReader = new BinaryReader(sm);
                     byte[] bytes = binReader.ReadBytes((Int32)sm.Length);
 
+
                     //Insert Data
-                  
+
+                }
+                else
+                {
+                    FileUpload1 = null;
+                    MessageBox.Show("menu item image must be  JPG, JPEG  or PNG extension");
+                    ResName.Text = " ";
+
+
+
+
 
                 }
 
