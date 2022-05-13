@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <form runat="server">
+
+   
     <div class="pt-5">
         <div class="container">
             <div class="row">
@@ -40,12 +43,19 @@
 							
 							<div id="offersclass">
 							
-							<input type="text" name="your point" id="offer" readonly /> 
-							<asp:Button class="btn btn-primary btn-block" type="submit"  id ="use" >Use</asp:Button>
+							<div id="offersclass">
+                               <asp:DropDownList ID="DropDownList1" runat="server" >  
+                                <asp:ListItem Value="">Please Select an Offer </asp:ListItem>  
+                                <asp:ListItem>New Delhi </asp:ListItem>  
+                                <asp:ListItem>Greater Noida</asp:ListItem>  
+                                <asp:ListItem>NewYork</asp:ListItem>  
+                                <asp:ListItem>Paris</asp:ListItem>  
+                                <asp:ListItem>London</asp:ListItem>  
+                               </asp:DropDownList>		
 							</div>
 							
 							
-         
+ 
                             
                         </form>
                         
@@ -54,7 +64,7 @@
             </div>
         </div>
     </div>
-	
+	 </form>
 </body>
 
 </html>
