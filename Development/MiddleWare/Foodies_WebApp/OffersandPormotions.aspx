@@ -32,8 +32,8 @@
                                 <input type="hidden" name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4">
                                 <div class="form-group required">
                                     <div id="yud">
-                                        <asp:Label runat="server" id="yp" for="username">Your Points </asp:Label>
-                                        <input type="text" id="yu" name="your point" readonly />
+                                        <asp:Label runat="server" ID="yp" for="username">Your Points </asp:Label>
+                                        <asp:TextBox runat="server" type="text" ID="yu" name="your point"></asp:TextBox>
 
                                     </div>
 
@@ -42,16 +42,10 @@
                                     <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Text="my loyality point" OnClick="UseOffer_OnClick"></asp:Button>
                                 </div>
 
-                                <div ID="offersclass">
+                                <div id="offersclass">
 
-                                    <div ID="offersclass">
-                                        <asp:DropDownList ID="DropDownList1" runat="server" >
-                                            <asp:ListItem Value="">Please Select an Offer </asp:ListItem>
-                                            <asp:ListItem>New Delhi </asp:ListItem>
-                                            <asp:ListItem>Greater Noida</asp:ListItem>
-                                            <asp:ListItem>NewYork</asp:ListItem>
-                                            <asp:ListItem>Paris</asp:ListItem>
-                                            <asp:ListItem>London</asp:ListItem>
+                                    <div id="offersclass">
+                                        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                                         </asp:DropDownList>
                                     </div>
                             </form>
