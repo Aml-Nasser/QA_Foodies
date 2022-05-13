@@ -177,6 +177,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FoodiesWebPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -188,6 +189,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Images\CinabonHome.jpg" />
     <Content Include="Images\Cinnabon.jpg" />
+    <Content Include="Images\FoodiesCover.png" />
     <Content Include="Images\KFC.png" />
     <Content Include="Images\KFChome.png" />
     <Content Include="Images\Mac.png" />
@@ -319,6 +321,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FoodiesWebPage.aspx.cs">
+      <DependentUpon>FoodiesWebPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FoodiesWebPage.aspx.designer.cs">
+      <DependentUpon>FoodiesWebPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -44,7 +44,7 @@
                     </form>
                     <p class="small-xl pt-3 text-center">
                         <span class="text-muted">Not a member?</span>
-                        <asp:HyperLink ID="signUpId" runat="server" Text="Sign Up" NavigateUrl="#"></asp:HyperLink>
+                        <asp:HyperLink ID="signUpId" runat="server" Text="Sign Up" href="Register.aspx"></asp:HyperLink>
                     </p>
                 </div>
             </div>
