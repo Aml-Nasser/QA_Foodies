@@ -42,7 +42,7 @@
 
 <div class="test">
 <div class="card">
-    <asp:HyperLink ID="HyperLink1" NavigateUrl="#" runat="server">
+    <asp:HyperLink ID="HyperLink1" NavigateUrl="MenuItem.aspx" runat="server">
   <asp:Image src="Images\KFChome.png" alt="Avatar" style="width:100%" runat="server"/></asp:HyperLink>
   <div class="container">
     <h4>john dean</h4>
@@ -50,7 +50,7 @@
 </div>
 
 <div class="card" >
-    <asp:HyperLink ID="HyperLink2" NavigateUrl="#" runat="server">
+    <asp:HyperLink ID="HyperLink2" NavigateUrl="MenuItem.aspx" runat="server">
   <asp:Image runat="server" src="Images\CinabonHome.jpg" alt="Avatar" style="width:100%"/></asp:HyperLink>
   <div class="container">
     <h4>john dean</h4>
@@ -59,7 +59,7 @@
 
 
 <div class="card" >
-    <asp:HyperLink ID="HyperLink3" NavigateUrl="#" runat="server">
+    <asp:HyperLink ID="HyperLink3" NavigateUrl="MenuItem.aspx" runat="server">
   <asp:Image runat="server" src="Images\MacHome.png" alt="Avatar" style="width:100%"/></asp:HyperLink>
   <div class="container">
     <h4>john dean</h4>

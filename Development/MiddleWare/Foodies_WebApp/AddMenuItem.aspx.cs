@@ -36,16 +36,10 @@ namespace Foodies_WebApp
             menuitemid++;
             if (FileUpload.HasFile)
             {
-                string Extent = System.IO.Path.GetExtension(FileUpload.FileName);
-                if (Extent.ToLower() != ".png" || Extent.ToLower() == ".jpg" || Extent.ToLower() == ".JPEG")
+                string Extent = System.IO.Path.GetExtension(FileUpload.FileName).ToLower();
+                if (Extent == ".png" || Extent == ".jpg" || Extent == ".jpeg")
                 {
-                    FileUpload = null;
-                    MessageBox.Show("menu item image must be  JPG, JPEG  or PNG extension");
-                    itemPrice.Text = " ";
-                    ItemName.Text = " ";
-                }
-                else
-                {
+                  
                     Stream sm = FileUpload.PostedFile.InputStream;
                     BinaryReader binReader = new BinaryReader(sm);
                     byte[] bytes = binReader.ReadBytes((Int32)sm.Length);
@@ -59,6 +53,15 @@ namespace Foodies_WebApp
                     commandDatabase.ExecuteNonQuery();
                     databaseConnection.Close();
                     MessageBox.Show("Menu Item Added Successfully");
+                    itemPrice.Text = " ";
+                    ItemName.Text = " ";
+                }
+                else
+                {
+                    FileUpload = null;
+                    MessageBox.Show("menu item image must be  JPG, JPEG  or PNG extension");
+                    itemPrice.Text = " ";
+                    ItemName.Text = " ";
 
                 }
 

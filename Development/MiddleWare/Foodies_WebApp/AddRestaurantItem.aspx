@@ -51,7 +51,7 @@
 						</div>
 						</div>
 						<div class="form-group pt-1">
-                                <button class="btn btn-primary btn-block" type="submit">Add</button>
+                                <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Text="Add" OnClick="AddRestaurant_OnClick"></asp:Button>
                         </div>
 							
 					</div>
