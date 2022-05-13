@@ -21,15 +21,15 @@
 </div>
 
 <div class="card" style="position:absolute; left:130px; top:500px;">
-    <h2 style="text-align: center;"><b>Add Offer</b></h2>
+    <h2 style="text-align: center;"><b><asp:HyperLink  runat="server" href="AddOfferRestaurantList.aspx" Text="Add Offer" ></asp:HyperLink></b></h2>
 </div>
 
 <div class="card" style="position:absolute; left:600px; top:410px; width: 280px;">
-    <h2 style="text-align: center;"><b>Add Restraunt</b></h2>
+    <h2 style="text-align: center;"><b><asp:HyperLink  runat="server" href="AddRestaurantItem.aspx" Text="Add Restraunt" ></asp:HyperLink></b></h2>
 </div>
 
 <div class="card" style="position:absolute; left:1150px; top:320px; width: 300px;">
-    <h2 style="text-align: center;"><b>Add Menu Item</b></h2>
+    <h2 style="text-align: center;"><b><asp:HyperLink  runat="server" href="AddMenuItemRestaurantList.aspx" Text="Add Menu Item" ></asp:HyperLink></b></h2>
 </div>
 
 <div class="card" style="position:absolute; left:1200px; top:500px;">
