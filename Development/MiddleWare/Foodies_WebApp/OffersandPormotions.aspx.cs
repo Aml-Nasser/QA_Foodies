@@ -18,7 +18,7 @@ namespace Foodies_WebApp
         {
             var restName = " ";
             var discountAmount = 0.00f;
-            yu.ReadOnly = true;
+            //yu.ReadOnly = true;
             connection.Open();
             string selectQuery = "SELECT restaurantName,discountamount FROM offer ;";
             command = new MySqlCommand(selectQuery, connection);
