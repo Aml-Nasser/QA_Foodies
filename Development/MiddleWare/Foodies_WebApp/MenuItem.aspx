@@ -38,7 +38,7 @@
                             ForeColor="Red"></asp:RequiredFieldValidator>
                         <br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="quant"
-                            ErrorMessage="Quantity should be numbers only" Display="Dynamic" ForeColor="Red" ValidationExpression="/^\d+$/">  
+                            ErrorMessage="Quantity should be numbers only" Display="Dynamic" ForeColor="Red" ValidationExpression="^[0-9]*$">  
                         </asp:RegularExpressionValidator>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="container">
-            <asp:HyperLink runat="server" href="ConfirmOrderPage.aspx" class="btn btn-primary" style="text-align: center; margin: auto;">Confirm Order</asp:HyperLink>
+            <asp:Button runat="server" onClick="ConfirmBtn_onClick" class="btn btn-primary" style="text-align: center; margin: auto;" Text="Confirm Order"></asp:Button>
         </div>
 
     </form>
