@@ -57,11 +57,7 @@ namespace Foodies_WebApp
             }
 
             connection.Close();
-
-            if (string.IsNullOrEmpty(username1.Text) || string.IsNullOrEmpty(pass1.Text))
-            {
-                MessageBox.Show("Please input all data", "Error");
-            }
+            Response.Redirect("Login.aspx");
         }
     }
 }

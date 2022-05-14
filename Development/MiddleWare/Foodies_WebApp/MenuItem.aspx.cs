@@ -26,8 +26,6 @@ namespace Foodies_WebApp
         {
             string user_Name = Session["user_Name"] as string;
 
-
-
             var orderId = 0;
             var noOfOrders = 0;
             connection.Open();
@@ -45,7 +43,7 @@ namespace Foodies_WebApp
 
             MySqlCommand command2;
             MySqlDataReader mdr2;
-            string selectQuery2 = "SELECT COUNT(*) FROM user_order; ";
+            string selectQuery2 = "SELECT COUNT(*) FROM user_order WHERE username= '" + user_Name + "';";
             command2 = new MySqlCommand(selectQuery2, connection);
             mdr2 = command2.ExecuteReader();
 
@@ -64,6 +62,7 @@ namespace Foodies_WebApp
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
+
             databaseConnection.Open();
             commandDatabase.Parameters.AddWithValue("@orderId", orderId);
             commandDatabase.Parameters.AddWithValue("@userName", user_Name);
@@ -72,7 +71,8 @@ namespace Foodies_WebApp
             commandDatabase.CommandTimeout = 60;
             databaseConnection.Close();
             noOfOrders++;
-            Response.Redirect("UserHomePage.aspx");
+            Session["orderId"] = orderId;
+            Response.Redirect("ConfirmOrderPage.aspx");
         }
 
     }
