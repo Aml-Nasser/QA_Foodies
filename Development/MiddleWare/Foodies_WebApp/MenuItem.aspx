@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8">
-    <title> MenuItem Page</title>
+    <title>MenuItem Page</title>
     <link rel="stylesheet" type="text/css" href="CSS\UserHomePage.css" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli'>
@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
         <header>
             <div class="containerr">
-                <img src="Images\FoodiesLogo.png" alt="logo" id="logo" style="height: 7%; width: 7%;">
+                <asp:Image runat="server" src="Images/Foodieslogo.png" alt="logo" ID="logo" style="height: 7%; width: 7%;"/>
                 <a href="OffersandPormotions.aspx" style="margin-left: 1300px;">Offers </a>
             </div>
         </header>
@@ -26,7 +26,7 @@
         <div class="card mb-3" style="max-width: 1500px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="Images\KFC.png" class="card-img">
+                    <asp:Image ID="Img" class="card-img" runat="server"/>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="container">
-            <asp:Button runat="server" onClick="ConfirmBtn_onClick" class="btn btn-primary" style="text-align: center; margin: auto;" Text="Confirm Order"></asp:Button>
+            <asp:Button runat="server" OnClick="ConfirmBtn_onClick" class="btn btn-primary" Style="text-align: center; margin: auto;" Text="Confirm Order"></asp:Button>
         </div>
 
     </form>

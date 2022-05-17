@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,11 +16,27 @@ namespace Foodies_WebApp
           new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=foodies_db");
         MySqlCommand command1;
         MySqlDataReader mdr1;
+        string rest_Name;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ToDo:select restaurant Iamge upon restrant name
-            string rest_Name = Session["rest_Name"] as string;
+            Img.ImageUrl = "~/Images/FoodiesLogo.png";
+            rest_Name = Session["rest_Name"] as string;
+            byte[] imageBytes = null;
+
+            connection.Open();
+            string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
+            MySqlCommand command;
+            MySqlDataReader mdr;
+            command = new MySqlCommand(selectQuery, connection);
+            mdr = command.ExecuteReader();
+            while (mdr.Read())
+            {
+                imageBytes = (byte[])mdr[0];
+
+            }
+            Img.ImageUrl = "data:Imaga;base64," + Convert.ToBase64String(imageBytes);
+            connection.Close();
         }
 
         protected void ConfirmBtn_onClick(object sender, EventArgs e)
@@ -27,7 +44,6 @@ namespace Foodies_WebApp
             string user_Name = Session["user_Name"] as string;
 
             var orderId = 0;
-            var noOfOrders = 0;
             connection.Open();
             string selectQuery = "SELECT MAX(orderid) FROM user_order";
             command1 = new MySqlCommand(selectQuery, connection);
@@ -39,39 +55,27 @@ namespace Foodies_WebApp
             }
             orderId++;
             connection.Close();
+
+            int quantity = int.Parse(quant.Text);
+            float price = 0.0f;
             connection.Open();
+            string selectQuery1 = "SELECT price FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
+            command1 = new MySqlCommand(selectQuery1, connection);
+            mdr1 = command1.ExecuteReader();
 
-            MySqlCommand command2;
-            MySqlDataReader mdr2;
-            string selectQuery2 = "SELECT COUNT(*) FROM user_order WHERE username= '" + user_Name + "';";
-            command2 = new MySqlCommand(selectQuery2, connection);
-            mdr2 = command2.ExecuteReader();
-
-            while (mdr2.Read())
+            while (mdr1.Read())
             {
-                noOfOrders = int.Parse(mdr2[0].ToString());
+                price = float.Parse(mdr1[0].ToString());
             }
+            float totalPrice = quantity * price;
+
             connection.Close();
 
-
-            var total = int.Parse(quant.Text) * 200;
-
-            string connectionString = ("datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;");
-            string iquery = "INSERT INTO `user_order`(`orderId`, `userName`, `menuItemImage`, `menuItemQuantity`, `discountApplied`, `totalPrice`)" +
-                "VALUES (@orderId,@userName,NULL,'" + int.Parse(quant.Text) + "', 0 ,@total )";
-
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
-
-            databaseConnection.Open();
-            commandDatabase.Parameters.AddWithValue("@orderId", orderId);
-            commandDatabase.Parameters.AddWithValue("@userName", user_Name);
-            commandDatabase.Parameters.AddWithValue("@total", total);
-            commandDatabase.ExecuteNonQuery();
-            commandDatabase.CommandTimeout = 60;
-            databaseConnection.Close();
-            noOfOrders++;
             Session["orderId"] = orderId;
+            Session["totalPrice"] = totalPrice;
+            Session["quantity"] = quantity;
+            Session["price"] = price;
+
             Response.Redirect("ConfirmOrderPage.aspx");
         }
 
