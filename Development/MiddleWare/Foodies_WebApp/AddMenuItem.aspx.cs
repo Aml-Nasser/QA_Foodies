@@ -33,7 +33,11 @@ namespace Foodies_WebApp
 
             while (mdr.Read())
             {
-
+                if (mdr[0] == DBNull.Value)
+                {
+                    menuitemid = 1;
+                }
+                else
                 {
                     menuitemid = int.Parse(mdr[0].ToString());
                 }

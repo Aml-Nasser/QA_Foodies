@@ -19,7 +19,7 @@ namespace Foodies_WebApp
         protected void AddOfferBtn_OnClick(object sender, EventArgs e)
         {
             string connectionString = ("datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;");
-            string insertQuery = "INSERT INTO `offer`(`offerCode`, `adminName`, `DiscountAmount`, `restaurantName`) VALUES ('" + int.Parse(Offer_Code.Text) + "', NULL ,'" + float.Parse(Discount_amount.Text) + "','PIZZA HUT')";
+            string insertQuery = "INSERT INTO `offer`(`offerCode`, `restaurantName`, `adminName`, `DiscountAmount`) VALUES ('" + int.Parse(Offer_Code.Text) + "', NULL ,'" + float.Parse(Discount_amount.Text) + "','PIZZA HUT')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(insertQuery, databaseConnection);
             commandDatabase.CommandTimeout = 60;

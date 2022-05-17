@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -58,9 +59,11 @@ namespace Foodies_WebApp
                         databaseConnection.Close();
 
                         Image1.ImageUrl = "data:Imaga;base64," + Convert.ToBase64String(bytes);
-                        MessageBox.Show("Now you need to add Menu Item");
+                       
                         Session["rest_Name"] = ResName.Text;
-                        Response.Redirect("AddMenuItem.aspx");
+                       
+
+                       Response.Redirect("AddMenuItem.aspx");
 
                     }
                     else

@@ -8,7 +8,7 @@ namespace Foodies_WebApp
     {
         public string user_Name;
         private MySqlConnection connection =
-            new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=foodies_db");
+            new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db");
         MySqlCommand command;
         MySqlDataReader mdr;
         protected void Page_Load(object sender, EventArgs e)
