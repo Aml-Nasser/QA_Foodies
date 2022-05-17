@@ -9,7 +9,6 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli'>
     <link rel="stylesheet" href="CSS/ConfirmOrder.css">
-    <!--<script type="text/javascript" src="myScript.js" ></script>-->
 </head>
 
 <body>
@@ -35,12 +34,12 @@
                                 </center>
                                 <hr>
                             </div>
-                            <asp:Image ID="Image1" src="Images\Cinnabon.jpg" AlternateText="menuItem" runat="server" Style="width: 40%" />
+                            <asp:Image ID="Image1" AlternateText="menuItem" runat="server" Style="width: 40%" />
 
                             <div class="form-group pt-1">
                                 <asp:Label ID="ip" runat="server" Text="Label" Style="position: relative; left: 74%;">Item Price</asp:Label>
                                 <br />
-                                <input type="text" id="yu" name="your point" style="left: 76%;" readonly />
+                                <asp:TextBox runat="server" type="text" ID="yu" name="your point" style="left: 76%;" />
 
 
                             </div>
@@ -48,10 +47,10 @@
                             <div id="Orderinfo">
 
                                 <asp:Label ID="Label1" runat="server" Text="Label">Your Total Price =</asp:Label>
-                                <input type="text" style="width: fit-content; background-color: #cad2c5; border: 0px;" readonly />
+                                <asp:TextBox runat="server" ID="totalPriceTxt" type="text" style="width: fit-content; background-color: #cad2c5; border: 0px;" />
                                 <br />
                                 <asp:Label ID="Label2" runat="server" Text="Label">You have</asp:Label>
-                                <input type="text" name="your point" style="width: fit-content; background-color: #cad2c5; border: 0px" readonly />
+                                <asp:TextBox runat="server" ID="disountTxt" style="width: fit-content; background-color: #cad2c5; border: 0px" />
                                 <asp:Label ID="Label3" runat="server" Text="Label">discount</asp:Label>
 
 
