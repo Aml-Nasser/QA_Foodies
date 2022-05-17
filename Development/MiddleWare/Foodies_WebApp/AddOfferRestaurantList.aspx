@@ -22,9 +22,10 @@
 
             <div class="card">
                 <asp:HyperLink ID="HyperLink1" NavigateUrl="AddOfferPage.aspx" runat="server">
-  <asp:Image src="Images\KFChome.png" alt="Avatar" style="width:100%" runat="server"/></asp:HyperLink>
+                    <asp:Image ID="Img" alt="Avatar" Style="width: 100%" runat="server" />
+                </asp:HyperLink>
                 <div class="container">
-                    <h4>john dean</h4>
+                    <asp:TextBox ID="restName" runat="server"></asp:TextBox>
                 </div>
             </div>
 
