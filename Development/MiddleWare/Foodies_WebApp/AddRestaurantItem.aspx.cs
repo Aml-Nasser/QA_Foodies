@@ -18,47 +18,60 @@ namespace Foodies_WebApp
         MySqlDataReader mdr;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Image1.ImageUrl = "~/Images/FoodiesLogo.png";
         }
 
         protected void AddRestaurant_OnClick(object sender, EventArgs e)
         {
-            var menuitemid = 0;
             connection.Open();
-            string selectQuery = "SELECT MAX(menuitemid) FROM menuitem";
+            string selectQuery = "SELECT * FROM restuarants WHERE restaurantName = '" + ResName.Text + "';";
             command = new MySqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
-            while (mdr.Read())
+            if (mdr.Read())
             {
-                menuitemid = int.Parse(mdr[0].ToString());
+                MessageBox.Show("Resturant already exists");
+                FileUpload1 = null;
+                ResName.Text = " ";
+
             }
-            connection.Close();
-            menuitemid++;
-            if (FileUpload1.HasFile)
+            else
             {
-                string Extent = System.IO.Path.GetExtension(FileUpload1.FileName);
-                if (Extent.ToLower() == ".png" || Extent.ToLower() == ".jpg" || Extent.ToLower() == ".JPEG")
+                if (FileUpload1.HasFile)
                 {
-                    Stream sm = FileUpload1.PostedFile.InputStream;
-                    BinaryReader binReader = new BinaryReader(sm);
-                    byte[] bytes = binReader.ReadBytes((Int32)sm.Length);
+                    string Extent = System.IO.Path.GetExtension(FileUpload1.FileName);
+                    if (Extent.ToLower() == ".png" || Extent.ToLower() == ".jpg" || Extent.ToLower() == ".jpeg")
+                    {
+                        Stream sm = FileUpload1.PostedFile.InputStream;
+                        BinaryReader binReader = new BinaryReader(sm);
+                        byte[] bytes = binReader.ReadBytes((Int32)sm.Length);
+
+                        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;";
+                        MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                        string iquery = "INSERT INTO `restuarants`(`restaurantName`, `adminName`, `image`) VALUES (@restaurantName,NULL,@image)";
+
+                        MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
+
+                        databaseConnection.Open();
+                        commandDatabase.Parameters.AddWithValue("@restaurantName", ResName.Text);
+                        commandDatabase.Parameters.AddWithValue("@image", bytes);
+                        commandDatabase.ExecuteNonQuery();
+                        databaseConnection.Close();
+
+                        Image1.ImageUrl = "data:Imaga;base64," + Convert.ToBase64String(bytes);
+                        MessageBox.Show("Now you need to add Menu Item");
+                        Session["rest_Name"] = ResName.Text;
+                        Response.Redirect("AddMenuItem.aspx");
+
+                    }
+                    else
+                    {
+                        FileUpload1 = null;
+                        MessageBox.Show("menu item image must be  JPG, JPEG  or PNG extension");
+                        ResName.Text = " ";
 
 
-                    //Insert Data
-
+                    }
                 }
-                else
-                {
-                    FileUpload1 = null;
-                    MessageBox.Show("menu item image must be  JPG, JPEG  or PNG extension");
-                    ResName.Text = " ";
-
-
-
-
-
-                }
-
             }
         }
     }
