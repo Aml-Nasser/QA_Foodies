@@ -22,7 +22,7 @@ namespace Foodies_WebApp
             Img.ImageUrl = "~/Images/FoodiesLogo.png";
             rest_Name = Session["rest_Name"] as string;
             byte[] imageBytes = null;
-           // bool usedLoyaltyPoints = false;
+           
 
             connection.Open();
             string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
@@ -80,10 +80,10 @@ namespace Foodies_WebApp
             Session["totalPrice"] = totalPrice;
             Session["quantity"] = quantity;
             Session["price"] = price;
+
             bool usedLoyaltyPoints = bool.Parse(Session["usedLoyaltyPoints"].ToString());
-
-
             float loyaltyPoints = float.Parse(Session["loyaltyPoints"].ToString());
+
             Response.Redirect("ConfirmOrderPage.aspx");
         }
 

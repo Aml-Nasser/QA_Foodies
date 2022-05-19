@@ -12,6 +12,8 @@ namespace Foodies_WebApp
         MySqlCommand command;
         MySqlDataReader mdr;
         bool usedLoyaltyPoints = false;
+        bool useOffer = false;
+        int discountAmount = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,6 +30,8 @@ namespace Foodies_WebApp
                 Session["user_Name"] = username.Text;
                 Session["loyaltyPoints"] = mdr[2].ToString();
                 Session["usedLoyaltyPoints"] = usedLoyaltyPoints;
+                Session["useOffer"] = useOffer;
+                Session["discountAmount"] = discountAmount;
                 Response.Redirect("UserHomePage.aspx");
 
             }

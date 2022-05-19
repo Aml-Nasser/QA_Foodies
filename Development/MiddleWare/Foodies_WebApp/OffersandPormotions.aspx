@@ -45,7 +45,7 @@
                                 <div id="offersclass">
 
                                     <div id="offersclass">
-                                        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack= "true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                                         </asp:DropDownList>
                                     </div>
                             </form>

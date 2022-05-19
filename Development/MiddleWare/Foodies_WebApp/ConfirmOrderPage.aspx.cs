@@ -21,7 +21,9 @@ namespace Foodies_WebApp
         float price = 0;
         string rest_Name = " ";
         float loyaltyPoints = 0.0f;
-        bool usedLoyaltyPoints = false; 
+        bool usedLoyaltyPoints = false;
+        bool useOffer = false;
+        float discountAmount = 0.0f;
         protected void Page_Load(object sender, EventArgs e)
         {
             order_Id = int.Parse(Session["orderId"].ToString());
@@ -32,6 +34,8 @@ namespace Foodies_WebApp
             loyaltyPoints = float.Parse(Session["loyaltyPoints"].ToString());
             usedLoyaltyPoints = bool.Parse(Session["usedLoyaltyPoints"].ToString());
             price = float.Parse(Session["price"].ToString());
+            useOffer = bool.Parse(Session["useOffer"].ToString());
+            discountAmount = float.Parse(Session["discountAmount"].ToString());
             byte[] imageBytes = null;
 
             connection.Open();
@@ -54,29 +58,72 @@ namespace Foodies_WebApp
                 if (reminder > 0)
                 {
                     totalPrice = reminder;
+                    discountAmount = loyaltyPoints;
+                    disountTxt.Text = loyaltyPoints.ToString();
                     loyaltyPoints = 0;
                 }
                 else
                 {
+                   
                     loyaltyPoints = Math.Abs(reminder);
+                    disountTxt.Text = loyaltyPoints.ToString();
                     totalPrice = 0;
                 }
                 usedLoyaltyPoints = false;
+              
             }
-            
+            if (useOffer == true)
+            {
+                float reminder = totalPrice - discountAmount;
+                if (reminder > 0)
+                {
+                    totalPrice = reminder;
+                }
+                else
+                {
+                    totalPrice = 0;
+                }
+                useOffer = false;
+                disountTxt.Text = discountAmount.ToString();
+            }
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            string iquery = "UPDATE `user` SET `loyaltyPoints`=@loyaltyPoints WHERE userName = @user_Name;";
+
+            MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
+
+
+            databaseConnection.Open();
+            commandDatabase.Parameters.AddWithValue("@user_Name", user_Name);
+            commandDatabase.Parameters.AddWithValue("@loyaltyPoints", loyaltyPoints);
+            commandDatabase.ExecuteNonQuery();
+            databaseConnection.Close();
+
 
             totalPriceTxt.ReadOnly = true;
             disountTxt.ReadOnly = true;
 
             yu.Text = price.ToString();
             totalPriceTxt.Text = totalPrice.ToString();
-            disountTxt.Text = "0";
+
+           
         }
 
         protected void ConfirmOrderBtn_OnClick(object sender, EventArgs e)
         {
+            float oldLoyalityPoints = 0.0f;
+            connection.Open();
+            string selectQuery2 = "SELECT loyaltyPoints FROM user where username = '" + user_Name + "' ;";
+            MySqlCommand command2 = new MySqlCommand(selectQuery2, connection);
+            var reader2 = command2.ExecuteReader();
+            while (reader2.Read())
+            {
+                oldLoyalityPoints = float.Parse(reader2[0].ToString());
+            }
+            connection.Close();
 
-            loyaltyPoints += (totalPrice / 4 );
+            loyaltyPoints = oldLoyalityPoints + (totalPrice / 4 );
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -100,7 +147,7 @@ namespace Foodies_WebApp
             commandDatabase1.Parameters.AddWithValue("@userName", user_Name);
             commandDatabase1.Parameters.AddWithValue("@quantity", quantity);
             commandDatabase1.Parameters.AddWithValue("@totalPrice", totalPrice);
-            commandDatabase1.Parameters.AddWithValue("@discount", 0);
+            commandDatabase1.Parameters.AddWithValue("@discount", discountAmount);
             commandDatabase1.ExecuteNonQuery();
             databaseConnection.Close();
           

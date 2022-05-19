@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Foodies_WebApp
 {
@@ -42,7 +43,7 @@ namespace Foodies_WebApp
             var reader1 = command1.ExecuteReader();
             while (reader1.Read())
             {
-                loyaltyPoints += float.Parse(reader1[0].ToString());
+                loyaltyPoints = float.Parse(reader1[0].ToString());
             }
             yu.Text = loyaltyPoints.ToString();
         }
@@ -51,15 +52,29 @@ namespace Foodies_WebApp
     protected void UseOffer_OnClick(object sender, EventArgs e)
         {
             bool usedLoyaltyPoints = true;
+            bool useOffer = false;
+
             Session["usedLoyaltyPoints"] = usedLoyaltyPoints;
             Session["loyaltyPoints"] = loyaltyPoints;
+            Session["useOffer"] = useOffer;
             Response.Redirect("UserHomePage.aspx");
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string rest_Name = Session["rest_Name"] as string;
-            Response.Redirect("MenuItem.aspx");
+            string selectedItem = DropDownList1.SelectedItem.Text;
+            string[] splittedItem = selectedItem.Split(' ');
+            string rest_Name = splittedItem[0];
+            float discountAmount = float.Parse(splittedItem[1]);
+            bool useOffer = true;
+            bool usedLoyaltyPoints = false;
+
+            Session["usedLoyaltyPoints"] = usedLoyaltyPoints;
+            Session["rest_Name"] = rest_Name;
+            Session["discountAmount"] = discountAmount;
+            Session["useOffer"] = useOffer;
+           
+           Response.Redirect("MenuItem.aspx");
         }
     }
-}
+} 
