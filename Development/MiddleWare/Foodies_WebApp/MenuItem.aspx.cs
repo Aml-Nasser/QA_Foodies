@@ -17,12 +17,12 @@ namespace Foodies_WebApp
         MySqlCommand command1;
         MySqlDataReader mdr1;
         string rest_Name;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Img.ImageUrl = "~/Images/FoodiesLogo.png";
             rest_Name = Session["rest_Name"] as string;
             byte[] imageBytes = null;
+           // bool usedLoyaltyPoints = false;
 
             connection.Open();
             string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
@@ -45,13 +45,18 @@ namespace Foodies_WebApp
 
             var orderId = 0;
             connection.Open();
-            string selectQuery = "SELECT MAX(orderid) FROM user_order";
+            string selectQuery = "SELECT MAX(orderid) FROM userorder";
             command1 = new MySqlCommand(selectQuery, connection);
             mdr1 = command1.ExecuteReader();
 
             while (mdr1.Read())
-            {
-                orderId = int.Parse(mdr1[0].ToString());
+                if (mdr1[0] == DBNull.Value)
+                {
+                    orderId = 1;
+                }
+                else
+                {
+                    orderId = int.Parse(mdr1[0].ToString());
             }
             orderId++;
             connection.Close();
@@ -75,7 +80,10 @@ namespace Foodies_WebApp
             Session["totalPrice"] = totalPrice;
             Session["quantity"] = quantity;
             Session["price"] = price;
+            bool usedLoyaltyPoints = bool.Parse(Session["usedLoyaltyPoints"].ToString());
 
+
+            float loyaltyPoints = float.Parse(Session["loyaltyPoints"].ToString());
             Response.Redirect("ConfirmOrderPage.aspx");
         }
 

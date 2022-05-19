@@ -39,7 +39,7 @@
 
                                 </div>
                                 <div class="form-group pt-1">
-                                    <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Text="my loyality point" OnClick="UseOffer_OnClick"></asp:Button>
+                                    <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Text="Use my loyality point" OnClick="UseOffer_OnClick"></asp:Button>
                                 </div>
 
                                 <div id="offersclass">

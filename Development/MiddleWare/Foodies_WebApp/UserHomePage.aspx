@@ -53,7 +53,7 @@
 
             <div class="card">
                 <asp:HyperLink ID="HyperLink2" NavigateUrl="MenuItem.aspx" runat="server">
-                    <asp:Image runat="server" ID="Img" src="" alt="Avatar" Style="width: 100%" />
+                    <asp:Image runat="server" ID="Img" alt="Avatar" Style="width: 100%" />
                 </asp:HyperLink>
 
                 <div class="container">

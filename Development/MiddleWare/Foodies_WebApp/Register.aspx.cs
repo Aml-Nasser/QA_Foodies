@@ -35,7 +35,7 @@ namespace Foodies_WebApp
             {
 
                 string connectionString = ("datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;");
-                string iquery = "INSERT INTO user(`userName`, `adminName`, `restaurantName`, `email`, `password`, `address`, `phoneNumber`, `fullName`) VALUES ('" + username1.Text + "', Null ,  Null, '" + email.Text + "', '" + pass1.Text + "','" + address.Text + "','" + phone.Text + "','" + fullName.Text + "')";
+                string iquery = "INSERT INTO `user`(`fullName`, `userName`, `restaurantName`, `phoneNumber`, `address`, `password`, `email`, `loyaltyPoints`) VALUES ('" + fullName.Text + "','" + username1.Text + "', Null ,'" + phone.Text + "', '" + address.Text + "','" + pass1.Text + "','" + email.Text + "',0)";
 
                 MySqlConnection databaseConnection = new MySqlConnection(connectionString);
                 MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);

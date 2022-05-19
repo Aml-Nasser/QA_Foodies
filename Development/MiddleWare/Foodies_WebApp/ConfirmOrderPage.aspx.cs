@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Foodies_WebApp
 {
@@ -19,6 +20,8 @@ namespace Foodies_WebApp
         int quantity = 0;
         float price = 0;
         string rest_Name = " ";
+        float loyaltyPoints = 0.0f;
+        bool usedLoyaltyPoints = false; 
         protected void Page_Load(object sender, EventArgs e)
         {
             order_Id = int.Parse(Session["orderId"].ToString());
@@ -26,8 +29,9 @@ namespace Foodies_WebApp
             user_Name = Session["user_Name"] as string;
             totalPrice = float.Parse(Session["totalPrice"].ToString());
             quantity = int.Parse(Session["quantity"].ToString());
+            loyaltyPoints = float.Parse(Session["loyaltyPoints"].ToString());
+            usedLoyaltyPoints = bool.Parse(Session["usedLoyaltyPoints"].ToString());
             price = float.Parse(Session["price"].ToString());
-
             byte[] imageBytes = null;
 
             connection.Open();
@@ -44,6 +48,23 @@ namespace Foodies_WebApp
             Image1.ImageUrl = "data:Imaga;base64," + Convert.ToBase64String(imageBytes);
             connection.Close();
             yu.ReadOnly = true;
+            if (usedLoyaltyPoints == true)
+            {
+                float reminder = totalPrice - loyaltyPoints;
+                if (reminder > 0)
+                {
+                    totalPrice = reminder;
+                    loyaltyPoints = 0;
+                }
+                else
+                {
+                    loyaltyPoints = Math.Abs(reminder);
+                    totalPrice = 0;
+                }
+                usedLoyaltyPoints = false;
+            }
+            
+
             totalPriceTxt.ReadOnly = true;
             disountTxt.ReadOnly = true;
 
@@ -55,22 +76,35 @@ namespace Foodies_WebApp
         protected void ConfirmOrderBtn_OnClick(object sender, EventArgs e)
         {
 
+            loyaltyPoints += (totalPrice / 4 );
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db;";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            string iquery = "INSERT INTO `user_order`(`orderId`, `userName`, `menuItemQuantity`, `discountApplied`, `totalPrice`) VALUES (@orderId,@username,@quantity,@discount,@totalPrice)";
+            string iquery = "UPDATE `user` SET `loyaltyPoints`=@loyaltyPoints WHERE userName= @user_Name;";
 
             MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
+           
 
             databaseConnection.Open();
-            commandDatabase.Parameters.AddWithValue("@orderId", order_Id);
-            commandDatabase.Parameters.AddWithValue("@userName", user_Name);
-            commandDatabase.Parameters.AddWithValue("@quantity", quantity);
-            commandDatabase.Parameters.AddWithValue("@discount", 0);
-            commandDatabase.Parameters.AddWithValue("@totalPrice", totalPrice);
+            commandDatabase.Parameters.AddWithValue("@user_Name", user_Name);
+            commandDatabase.Parameters.AddWithValue("@loyaltyPoints", loyaltyPoints);
             commandDatabase.ExecuteNonQuery();
             databaseConnection.Close();
 
+            string iquery1 = "INSERT INTO `userorder`(`orderId`, `userName`, `menuItemQuantity`, `totalprice`, `discountApplied`) VALUES (@orderId,@username,@quantity,@totalPrice,@discount)";
+            MySqlCommand commandDatabase1 = new MySqlCommand(iquery1, databaseConnection);
+          
+
+            databaseConnection.Open();
+            commandDatabase1.Parameters.AddWithValue("@orderId", order_Id);
+            commandDatabase1.Parameters.AddWithValue("@userName", user_Name);
+            commandDatabase1.Parameters.AddWithValue("@quantity", quantity);
+            commandDatabase1.Parameters.AddWithValue("@totalPrice", totalPrice);
+            commandDatabase1.Parameters.AddWithValue("@discount", 0);
+            commandDatabase1.ExecuteNonQuery();
+            databaseConnection.Close();
+          
+            Response.Redirect("UserHomePage.aspx");
 
         }
     }
