@@ -27,17 +27,6 @@
             </div>
         </header>
 
-        <div id="search">
-            <asp:TextBox ID="searchInput" type="search" placeholder="search" MaxLength="32" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator
-                ID="txtZIP_validation" runat="SERVER"
-                ControlToValidate="searchInput"
-                ErrorMessage="Enter a valid Restaurant Name."
-                ValidationExpression="[A-Za-z]{1,32}">
-            </asp:RegularExpressionValidator>
-
-        </div>
-
         <div>
             <h2 style="margin-top: 107px; text-align: center;">FOODIES RESTAURANT </h2>
         </div>

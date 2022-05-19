@@ -24,24 +24,6 @@ namespace Foodies_WebApp
         protected global::System.Web.UI.WebControls.Image logo;
 
         /// <summary>
-        /// searchInput control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchInput;
-
-        /// <summary>
-        /// txtZIP_validation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator txtZIP_validation;
-
-        /// <summary>
         /// HyperLink1 control.
         /// </summary>
         /// <remarks>

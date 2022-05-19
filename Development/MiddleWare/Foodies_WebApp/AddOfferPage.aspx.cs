@@ -31,8 +31,7 @@ namespace Foodies_WebApp
                 databaseConnection.Open();
                 commandDatabase.Parameters.AddWithValue("@rest_Name", rest_Name);
                 commandDatabase.ExecuteNonQuery();
-
-                MessageBox.Show("Offer Added Successfully!");
+                Response.Redirect("AdminHome.aspx");
                 databaseConnection.Close();
             }
             catch (Exception ex)

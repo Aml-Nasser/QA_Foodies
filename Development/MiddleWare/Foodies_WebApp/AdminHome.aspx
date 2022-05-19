@@ -17,7 +17,7 @@
 </header>
  <br><br><br><br><br><br><br>
 <div class="card" style="position:absolute; left:130px; top:320px;">
-    <h2 style="text-align: center;"><b><asp:HyperLink id="AddUsera" runat="server" Text="Add User" href="AddUser.aspx" ></asp:HyperLink></b></h2>
+    <h2 style="text-align: center;"><b><asp:HyperLink id="AddUsera" runat="server" Text="Add User" href="#" ></asp:HyperLink></b></h2>
 </div>
 
 <div class="card" style="position:absolute; left:130px; top:500px;">
@@ -29,7 +29,7 @@
 </div>
 
 <div class="card" style="position:absolute; left:1200px; top:500px;">
-    <h2 style="text-align: center;"><b><asp:HyperLink id="addAdmina" runat="server" Text="Add Admin"  href="AddAdmin.aspx" ></asp:HyperLink></b></h2>
+    <h2 style="text-align: center;"><b><asp:HyperLink id="addAdmina" runat="server" Text="Add Admin"  href="#" ></asp:HyperLink></b></h2>
 </div>
 
     </form>
