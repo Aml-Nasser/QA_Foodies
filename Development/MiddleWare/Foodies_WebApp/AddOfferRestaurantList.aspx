@@ -18,36 +18,71 @@
             <h2 style="margin-top: 107px; text-align: center;">FOODIES RESTAURANT </h2>
         </div>
 
-        <div class="test">
-
-            <div class="card">
-                <asp:HyperLink ID="HyperLink1" NavigateUrl="AddOfferPage.aspx" runat="server">
-                    <asp:Image ID="Img" alt="Avatar" Style="width: 100%" runat="server" />
-                </asp:HyperLink>
-                <div class="container">
-                    <asp:TextBox ID="restName" runat="server"></asp:TextBox>
-                </div>
-            </div>
-
-            <div class="card">
-                <asp:HyperLink ID="HyperLink2" NavigateUrl="AddOfferPage.aspx" runat="server">
-     <asp:Image runat="server" src="Images\CinabonHome.jpg" alt="Avatar" style="width:100%"/></asp:HyperLink>
-                <div class="container">
-
-                    <h4>john dean</h4>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <asp:HyperLink ID="HyperLink3" NavigateUrl="AddOfferPage.aspx" runat="server">
-      <asp:Image runat="server" src="Images\MacHome.png" alt="Avatar" style="width:100%"/></asp:HyperLink>
-
-                <div class="container">
-                    <h4>john dean</h4>
-                </div>
-            </div>
-
+       <div style="padding: 64px">
+            <asp:ListView ID="RestID" runat="server"
+                GroupItemCount="4"
+                ItemType="Foodies_WebApp.Models.RestaurantsModel" SelectMethod="GetRestaurants">
+                <EmptyDataTemplate>
+                    <table>
+                        <tr>
+                            <td>No data was returned.</td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
+                <EmptyItemTemplate>
+                    <td />
+                </EmptyItemTemplate>
+                <GroupTemplate>
+                    <tr id="itemPlaceholderContainer" runat="server">
+                        <td id="itemPlaceholder" runat="server"></td>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td runat="server">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="AddOfferPage.aspx?Name=<%#:Item.Name%>">
+                                        <img src="<%#:Item.Image%>"
+                                            width="200" /></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a>
+                                        <center>
+                                            <span>
+                                                <%#:Item.Name%>
+                                            </span>
+                                        </center>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        </p>
+                    </td>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
+                                        <tr id="groupPlaceholder"></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
         </div>
     </form>
 
