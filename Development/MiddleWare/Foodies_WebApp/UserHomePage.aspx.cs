@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Foodies_WebApp.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,25 +16,29 @@ namespace Foodies_WebApp
         private MySqlConnection connection =
           new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=foodies_db");
         MySqlCommand command;
-        protected void Page_Load(object sender, EventArgs e)
+        public List<RestaurantsModel> GetRestaurants()
         {
-
-            var rest_Name = " ";
+            var restaurantsList = new List<RestaurantsModel>();
             connection.Open();
             string selectQuery = "SELECT restaurantName,image FROM restuarants ;";
             command = new MySqlCommand(selectQuery, connection);
             var reader = command.ExecuteReader();
             while (reader.Read())
             {
-                rest_Name = reader[0].ToString();
-                byte[] img; img = (byte[])reader[1];
-                restName.Text = rest_Name;
-                Img.ImageUrl = "data:image;base64," + Convert.ToBase64String(img);
+
+                var img = (byte[])reader[1];
+                restaurantsList.Add(new RestaurantsModel
+                {
+                    Name = reader[0].ToString(),
+                    Image = "data:image;base64," + Convert.ToBase64String(img)
+                });
             }
             connection.Close();
-            Session["rest_Name"] = restName.Text;
-           float loyaltyPoints = float.Parse(Session["loyaltyPoints"].ToString());
-           bool usedLoyaltyPoints = bool.Parse(Session["usedLoyaltyPoints"].ToString());
+            return restaurantsList;
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
