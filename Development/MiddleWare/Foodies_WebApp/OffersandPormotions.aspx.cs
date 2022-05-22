@@ -21,9 +21,9 @@ namespace Foodies_WebApp
             string user_Name = Session["user_Name"] as string;
             var restName = " ";
             var discountAmount = 0.00f;
-           
+
             yu.ReadOnly = true;
-           
+
             connection.Open();
             string selectQuery = "SELECT restaurantName,discountamount FROM offer ;";
             command = new MySqlCommand(selectQuery, connection);
@@ -47,9 +47,9 @@ namespace Foodies_WebApp
             }
             yu.Text = loyaltyPoints.ToString();
         }
-       
 
-    protected void UseOffer_OnClick(object sender, EventArgs e)
+
+        protected void UseOffer_OnClick(object sender, EventArgs e)
         {
             bool usedLoyaltyPoints = true;
             bool useOffer = false;
@@ -73,8 +73,8 @@ namespace Foodies_WebApp
             Session["rest_Name"] = rest_Name;
             Session["discountAmount"] = discountAmount;
             Session["useOffer"] = useOffer;
-           
-           Response.Redirect("MenuItem.aspx");
+
+            Response.Redirect($"MenuItem.aspx?Name={rest_Name}");
         }
     }
-} 
+}
