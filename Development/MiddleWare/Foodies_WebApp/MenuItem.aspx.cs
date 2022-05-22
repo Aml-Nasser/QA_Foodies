@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -16,16 +17,22 @@ namespace Foodies_WebApp
           new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=foodies_db");
         MySqlCommand command1;
         MySqlDataReader mdr1;
-        string rest_Name;
+        string name;
         protected void Page_Load(object sender, EventArgs e)
         {
             Img.ImageUrl = "~/Images/FoodiesLogo.png";
-            rest_Name = Session["rest_Name"] as string;
+            name = Request.QueryString["Name"];
+            Session["rest_Name"] = name;
+            if (Request.QueryString.Count == 0)
+            {
+
+                return;
+            }
+
             byte[] imageBytes = null;
-           
 
             connection.Open();
-            string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
+            string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + name + "';";
             MySqlCommand command;
             MySqlDataReader mdr;
             command = new MySqlCommand(selectQuery, connection);
@@ -57,14 +64,14 @@ namespace Foodies_WebApp
                 else
                 {
                     orderId = int.Parse(mdr1[0].ToString());
-            }
+                }
             orderId++;
             connection.Close();
 
             int quantity = int.Parse(quant.Text);
             float price = 0.0f;
             connection.Open();
-            string selectQuery1 = "SELECT price FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
+            string selectQuery1 = "SELECT price FROM menuitem WHERE restaurantName = '" + name + "';";
             command1 = new MySqlCommand(selectQuery1, connection);
             mdr1 = command1.ExecuteReader();
 
