@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Foodies_WebApp.Register" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Foodies_WebApp.Register" %>
 
 <!DOCTYPE html>
 
@@ -133,8 +134,8 @@
                             </div>
                         
                             <p class="small-xl pt-3 text-center">
-                            <span class="text-muted">Already a member?</span>
-                             <asp:HyperLink id="Loginab" runat="server" Text="LogIn" href="Login.aspx" ></asp:HyperLink>
+                            <span class="text-muted">Have an account?</span>
+                             <asp:HyperLink id="Loginab" runat="server" Text="LogIn here" href="Login.aspx" ></asp:HyperLink>
                         </p>
                     </div>
                 </div>

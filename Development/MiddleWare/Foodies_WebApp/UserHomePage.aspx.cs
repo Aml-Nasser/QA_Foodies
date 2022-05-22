@@ -32,7 +32,8 @@ namespace Foodies_WebApp
             }
             connection.Close();
             Session["rest_Name"] = restName.Text;
-
+           float loyaltyPoints = float.Parse(Session["loyaltyPoints"].ToString());
+           bool usedLoyaltyPoints = bool.Parse(Session["usedLoyaltyPoints"].ToString());
         }
     }
 }

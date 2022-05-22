@@ -45,12 +45,12 @@
                                 <br />
                                 <div class="flex-container">
                                     <div class="flex_child">
-                                        <img src="Images/FoodiesLogo.png" height="80" width="80" style="margin-bottom: -34%; margin-left: 152%;">
+                                        <asp:Image ID="Image1" runat="server" height="80" width="80" style="margin-bottom: -34%; margin-left: 152%;"/>
                                     </div>
                                     <div class="flex_child">
                                         <div class="form-group pt-1">
                                             <asp:FileUpload ID="FileUpload1" required="true" runat="server" Style="margin-left: 18%;" />
-                                            <!---  <button class="btn btn-primary btn-block" type="submit">Upload</button>-->
+                                            
                                         </div>
                                     </div>
                                 </div>

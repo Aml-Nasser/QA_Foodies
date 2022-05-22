@@ -8,9 +8,12 @@ namespace Foodies_WebApp
     {
         public string user_Name;
         private MySqlConnection connection =
-            new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=foodies_db");
+            new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=foodies_db");
         MySqlCommand command;
         MySqlDataReader mdr;
+        bool usedLoyaltyPoints = false;
+        bool useOffer = false;
+        int discountAmount = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,13 +22,16 @@ namespace Foodies_WebApp
         protected void LoginBtn_OnClick(object sender, EventArgs e)
         {
             connection.Open();
-            string selectQuery = "SELECT * FROM user WHERE userName = '" + username.Text + "' AND password = '" + password.Text + "';";
+            string selectQuery = "SELECT userName,password,loyaltyPoints FROM user WHERE userName = '" + username.Text + "' AND password = '" + password.Text + "';";
             command = new MySqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             if (mdr.Read())
             {
                 Session["user_Name"] = username.Text;
-                MessageBox.Show("Login Successful!");
+                Session["loyaltyPoints"] = mdr[2].ToString();
+                Session["usedLoyaltyPoints"] = usedLoyaltyPoints;
+                Session["useOffer"] = useOffer;
+                Session["discountAmount"] = discountAmount;
                 Response.Redirect("UserHomePage.aspx");
 
             }
