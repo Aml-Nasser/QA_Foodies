@@ -38,7 +38,8 @@ namespace Foodies_WebApp
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            bool cancelOrder = false;
+            Session["cancelOrder"] = cancelOrder;
         }
     }
 }

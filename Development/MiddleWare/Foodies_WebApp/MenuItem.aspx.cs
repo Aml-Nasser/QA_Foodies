@@ -18,14 +18,25 @@ namespace Foodies_WebApp
         MySqlCommand command1;
         MySqlDataReader mdr1;
         string name;
+        bool cancelOrder=false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            cancelOrder = bool.Parse(Session["cancelOrder"].ToString());
+            if (Request.QueryString.Count != 0 && cancelOrder != false)
+            {
+                int quantity = int.Parse(Session["quantity"].ToString());
+                quant.Text = quantity.ToString();
+                Session["cancelOrder"] = false;
+            }
+           
+            
             Img.ImageUrl = "~/Images/FoodiesLogo.png";
             name = Request.QueryString["Name"];
             Session["rest_Name"] = name;
             if (Request.QueryString.Count == 0)
             {
-
+                int quantity = int.Parse(Session["quantity"].ToString());
+                quant.Text = quantity.ToString();
                 return;
             }
 
@@ -48,8 +59,8 @@ namespace Foodies_WebApp
 
         protected void ConfirmBtn_onClick(object sender, EventArgs e)
         {
+            cancelOrder = bool.Parse(Session["cancelOrder"].ToString());
             string user_Name = Session["user_Name"] as string;
-
             var orderId = 0;
             connection.Open();
             string selectQuery = "SELECT MAX(orderid) FROM userorder";
