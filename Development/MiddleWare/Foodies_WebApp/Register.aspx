@@ -77,7 +77,7 @@
                             ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <asp:RegularExpressionValidator id="passExp" runat="server" ControlToValidate="pass1"   
-                                ErrorMessage="Use minimum 8 characters with a mix of letters, numbers & symbolsPattern" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">  
+                                ErrorMessage="Use minimum 8 characters with a mix of letters, numbers & symbols Pattern" ForeColor="Red" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">  
                                 </asp:RegularExpressionValidator> 
                             </div>
 
@@ -122,7 +122,7 @@
                             ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
                                 <asp:RegularExpressionValidator id="phoneVal" runat="server" ControlToValidate="phone"   
-                                ErrorMessage="Please enter a valid phone number in 11 digits" ForeColor="Red" ValidationExpression="^01\d{9}$">  
+                                ErrorMessage="Please enter a valid phone number in 11 digits starting with 01" ForeColor="Red" ValidationExpression="^01\d{9}$">  
                                 </asp:RegularExpressionValidator>  
                             </div>
 

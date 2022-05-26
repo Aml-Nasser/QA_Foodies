@@ -18,6 +18,7 @@ namespace Foodies_WebApp
         float loyaltyPoints = 0.0f;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["cancelOrder"] = false;
             string user_Name = Session["user_Name"] as string;
             var restName = " ";
             var discountAmount = 0.00f;
