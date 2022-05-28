@@ -154,5 +154,13 @@ namespace Foodies_WebApp
             Response.Redirect("UserHomePage.aspx");
 
         }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            bool cancelOrder = true;
+            Session["cancelOrder"] = cancelOrder;
+            Response.Redirect($"MenuItem.aspx?Name={rest_Name}");
+           
+        }
     }
 }

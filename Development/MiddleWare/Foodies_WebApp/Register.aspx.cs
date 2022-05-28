@@ -29,7 +29,7 @@ namespace Foodies_WebApp
             if (mdr.Read())
             {
                 MessageBox.Show("Username already taken!");
-
+                username1.Text = " ";
             }
             else
             {
@@ -54,10 +54,11 @@ namespace Foodies_WebApp
                 }
 
                 MessageBox.Show("Account Successfully Created!");
+               
+                Response.Redirect("Login.aspx");
             }
 
             connection.Close();
-            Response.Redirect("Login.aspx");
         }
     }
 }

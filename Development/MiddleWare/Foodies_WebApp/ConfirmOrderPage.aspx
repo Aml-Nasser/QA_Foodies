@@ -57,7 +57,7 @@
                             </div>
 
                             <div style="display: inline-flex; flex-direction: row-reverse; align-content: center; justify-content: center; align-items: flex-end;">
-                                <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Style="width: fit-content;" Text="Cancel"></asp:Button>
+                                <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Style="width: fit-content;" Text="Cancel" OnClick="Cancel_Click"></asp:Button>
                                 <asp:Button runat="server" class="btn btn-primary btn-block" type="submit" Style="width: fit-content;" Text="Submit" OnClick="ConfirmOrderBtn_OnClick"></asp:Button>
 
                             </div>

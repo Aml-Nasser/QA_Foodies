@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -16,16 +17,33 @@ namespace Foodies_WebApp
           new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=foodies_db");
         MySqlCommand command1;
         MySqlDataReader mdr1;
-        string rest_Name;
+        string name;
+        bool cancelOrder=false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Img.ImageUrl = "~/Images/FoodiesLogo.png";
-            rest_Name = Session["rest_Name"] as string;
-            byte[] imageBytes = null;
+            cancelOrder = bool.Parse(Session["cancelOrder"].ToString());
+            if (Request.QueryString.Count != 0 && cancelOrder != false)
+            {
+                int quantity = int.Parse(Session["quantity"].ToString());
+                quant.Text = quantity.ToString();
+                Session["cancelOrder"] = false;
+            }
            
+            
+            Img.ImageUrl = "~/Images/FoodiesLogo.png";
+            name = Request.QueryString["Name"];
+            Session["rest_Name"] = name;
+            if (Request.QueryString.Count == 0)
+            {
+                int quantity = int.Parse(Session["quantity"].ToString());
+                quant.Text = quantity.ToString();
+                return;
+            }
+
+            byte[] imageBytes = null;
 
             connection.Open();
-            string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
+            string selectQuery = "SELECT imagePath FROM menuitem WHERE restaurantName = '" + name + "';";
             MySqlCommand command;
             MySqlDataReader mdr;
             command = new MySqlCommand(selectQuery, connection);
@@ -41,8 +59,8 @@ namespace Foodies_WebApp
 
         protected void ConfirmBtn_onClick(object sender, EventArgs e)
         {
+            cancelOrder = bool.Parse(Session["cancelOrder"].ToString());
             string user_Name = Session["user_Name"] as string;
-
             var orderId = 0;
             connection.Open();
             string selectQuery = "SELECT MAX(orderid) FROM userorder";
@@ -57,14 +75,14 @@ namespace Foodies_WebApp
                 else
                 {
                     orderId = int.Parse(mdr1[0].ToString());
-            }
+                }
             orderId++;
             connection.Close();
 
             int quantity = int.Parse(quant.Text);
             float price = 0.0f;
             connection.Open();
-            string selectQuery1 = "SELECT price FROM menuitem WHERE restaurantName = '" + rest_Name + "';";
+            string selectQuery1 = "SELECT price FROM menuitem WHERE restaurantName = '" + name + "';";
             command1 = new MySqlCommand(selectQuery1, connection);
             mdr1 = command1.ExecuteReader();
 
